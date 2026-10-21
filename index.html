@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>طرق الدفع والبنوك</title>
+<meta name="description" content="قائمة البنوك والمحافظ الإلكترونية مع الشعارات المنشورة من المصادر الرسمية حيث تتوفر.">
+<style>
+  :root{--ink:#454d60;--line:#e6e6e6;--blue:#123c78;--bg:#fff}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink)}
+  .page{width:100%;max-width:1200px;margin:0 auto;padding:18px 12px 34px}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 26px;direction:ltr;align-items:start}
+  .item{min-width:0;text-align:center;direction:rtl}
+  .tile{height:clamp(175px,31vw,365px);border:1px solid var(--line);border-radius:clamp(22px,3.3vw,40px);box-shadow:0 0 2px #00000010;background:#fff;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
+  .logo{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#172e64;font-weight:800;line-height:1.05}.logo img{display:block;width:100%;height:100%;object-fit:contain;max-width:100%;max-height:100%}.logo img.wide{width:100%;height:auto;max-height:78%}.logo img.compact{width:88%;height:auto;max-height:78%}
+  .name{font-size:clamp(18px,3.2vw,34px);font-weight:750;line-height:1.45;margin-top:7px;min-height:1.45em;overflow-wrap:anywhere}
+  .mad{font-size:clamp(26px,5vw,56px);letter-spacing:-2px;direction:ltr;color:#0a2865;font-weight:800}.mad small{display:block;font-size:.58em;text-align:right;margin-top:-5px;letter-spacing:-1px}.plus{color:#14a9d2}
+  .blom{display:flex;align-items:center;gap:12px;direction:ltr;color:#1760a6;font-style:italic;font-size:clamp(24px,5vw,54px);font-weight:900}.blom .mark{width:30%;aspect-ratio:1;background:#1262a7;position:relative;overflow:hidden}.blom .mark:before{content:"";position:absolute;width:140%;height:3px;background:white;transform:rotate(-36deg);left:-12%;top:55%}.blom .mark:after{content:"⌁";position:absolute;left:24%;top:8%;color:white;font-size:32px}
+  .ajib{font-family:Georgia,serif;font-size:clamp(32px,6vw,70px);font-weight:500;direction:ltr;color:#153966;display:flex;align-items:center;gap:12px}.ajib .rings{font-family:Arial;font-size:.95em;border:5px solid #163d69;border-radius:50%;width:1.15em;height:1.15em;display:grid;place-items:center;line-height:1}.ajib .rings span{border:4px solid #163d69;border-radius:50%;width:.65em;height:.65em;display:block}
+  .din{color:#e5008b;font-size:clamp(70px,13vw,140px);font-weight:900;line-height:.8}.dinword{font-size:clamp(24px,4vw,44px);font-weight:900;color:#102c61;margin-top:16px}
+  .uwallet{background:linear-gradient(160deg,#20263e 0 72%,#5b123d 100%);color:white;font-size:clamp(28px,5vw,58px);font-weight:700;direction:ltr;width:100%;padding:22px 5px;text-align:center}
+  .arab{direction:ltr;font-size:clamp(20px,3.5vw,39px);font-weight:800;color:#173a68;display:flex;align-items:center;gap:8px}.arab .circles{display:flex;gap:0}.arab i{width:.72em;height:.72em;border:5px solid #1479db;border-radius:50%;display:block;margin-left:-4px}
+  .housing{color:#17609a;font-size:clamp(20px,3.4vw,38px);font-weight:800;line-height:1.1}.housing small{display:block;font-size:.7em;margin-top:5px}.etihad{color:#292929;font-size:clamp(18px,3vw,32px);font-weight:600;display:flex;align-items:center;gap:8px}.flower{font-size:1.5em;color:#262626}
+  .capital{font-size:clamp(24px,4vw,43px);font-weight:800;color:#273343;direction:ltr}.capital small{font-size:.26em;display:block;letter-spacing:3px}
+  .cab{color:#27845b;font-size:clamp(18px,3vw,34px);font-weight:800}.cab small{display:block;color:#343434;font-size:.62em;font-weight:500}
+  .boj{background:#091d3a;color:white;padding:12px 9px;width:100%;font-size:clamp(16px,2.6vw,29px);font-weight:600;direction:ltr}.boj .dots{color:#ffb51b;letter-spacing:3px;font-size:.65em;display:block}
+  .jcb{font-size:clamp(14px,2.4vw,27px);color:#1b5a8d;font-weight:800;line-height:1.15}.jahli{display:flex;align-items:center;gap:8px;font-size:clamp(14px,2.3vw,25px);font-weight:800;color:#2d2b28}.jahli b{background:#1aa0a0;color:#fff;border-radius:50%;padding:18px 12px;font-size:1.35em}
+  .iiab{font-family:Georgia,serif;color:#1d427e;font-size:clamp(13px,2.2vw,24px);font-weight:700;line-height:1.25}.iiab .coins{display:block;font-size:2em;letter-spacing:-7px;color:#8c9aaa;margin-bottom:8px}
+  .abc{font-size:clamp(24px,4.5vw,50px);direction:ltr;color:#343842;font-weight:400}.abc b{color:#158ba9;font-weight:800}
+  .jkb{font-size:clamp(16px,2.6vw,29px);color:#163c78;font-weight:900;line-height:1.1}.jkb .diamond{font-size:1.5em;color:#258ac4;vertical-align:middle}
+  .islamic{font-size:clamp(16px,2.7vw,29px);font-weight:800;color:#30333a}.islamic b{color:#ee542e}
+  @media(max-width:520px){.page{padding:12px 9px 24px}.grid{gap:22px 12px}.tile{height:clamp(120px,30vw,175px);padding:9px;border-radius:23px}.name{font-size:clamp(14px,3.8vw,19px);margin-top:5px}.blom{gap:5px}.blom .mark:after{font-size:18px}.ajib .rings{border-width:3px}.ajib .rings span{border-width:2px}.dinword{margin-top:10px}.uwallet{padding:14px 3px}.arab i{border-width:3px}}
+</style>
+</head>
+<body>
+<main class="page"><section class="grid" aria-label="البنوك وطرق الدفع">
+  <article class="item"><div class="tile"><div class="logo"><div class="mad">MadPay<span class="plus">✣</span><small>Plus</small></div></div></div><div class="name">ماد بي بلس</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/Bloom_Bank.jpg" alt="شعار بنك لبنان والمهجر" loading="lazy"></div></div><div class="name">بنك لبنان و المهجر</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/AJIB_Bank.jpg" alt="شعار بنك الاستثمار العربي الأردني" loading="lazy"></div></div><div class="name">بنك الاستثمار العربي الأردني</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/Bank_al_Etihad.jpg" alt="شعار بنك الاتحاد" loading="lazy"></div></div><div class="name">بنك الإتحاد</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/The_Housing_Bank.jpg" alt="شعار بنك الإسكان" loading="lazy"></div></div><div class="name">بنك الإسكان للتجارة و التمويل</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/Arab_Bank.jpg" alt="شعار البنك العربي" loading="lazy"></div></div><div class="name">البنك العربي</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/Capital_Bank.jpg" alt="شعار كابيتال بنك" loading="lazy"></div></div><div class="name">كابيتال بنك</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/Cairo_Amman_Bank.jpg" alt="شعار بنك القاهرة عمان" loading="lazy"></div></div><div class="name">بنك القاهرة عمان</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/Bank_of_Jordan.jpg" alt="شعار بنك الأردن" loading="lazy"></div></div><div class="name">بنك الأردن</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/Jordan_Commercial_Bank-0.jpg" alt="شعار البنك التجاري الأردني" loading="lazy"></div></div><div class="name">البنك التجاري الأردني</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/البنك_الاهلي_الاردني-0.jpg" alt="شعار البنك الأهلي الأردني" loading="lazy"></div></div><div class="name">البنك الأهلي الأردني</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/Untitled-1_0002_البنك-العربي-الاسلامي-الدولي.png" alt="شعار البنك العربي الإسلامي الدولي" loading="lazy"></div></div><div class="name">البنك العربي الإسلامي الدولي</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/ABC_Bank.jpg" alt="شعار بنك المؤسسة العربية المصرفية" loading="lazy"></div></div><div class="name">بنك المؤسسة العربية المصرفية</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://dic.gov.jo/ebv4.0/root_storage/AR/EB_List_Page/Jordan_Kuwait_Bank.jpg" alt="شعار البنك الأردني الكويتي" loading="lazy"></div></div><div class="name">البنك الأردني الكويتي</div></article>
+  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://www.crif.jo/ebv4.0/root_storage/EN/EB_List_Page/Jordan_Islamic_Bank.png" alt="شعار البنك الإسلامي الأردني" loading="lazy"></div></div><div class="name">البنك الإسلامي الأردني</div></article>
+  <article class="item"><div class="tile"><div class="logo"><div class="din">ↄ<div class="dinword">دينارك<br><small style="font-size:.58em">DINARAK</small></div></div></div></div><div class="name">دينارك</div></article>
+  <article class="item"><div class="tile"><div class="logo"><div class="uwallet">uwallet</div></div></div><div class="name">يو والت</div></article>
+</section></main>
+
+<style>
+  /* A failed remote logo should never leave a broken-image icon. */
+  .logo.fallback-logo{flex-direction:column;gap:8px;padding:12px;text-align:center;color:#174579}
+  .fallback-logo .fallback-name{font-size:clamp(15px,2.7vw,31px);font-weight:850;line-height:1.2;max-width:100%;overflow-wrap:anywhere}
+  .fallback-logo .fallback-mark{font-size:clamp(11px,1.5vw,17px);font-weight:700;letter-spacing:.08em;color:#6c7890;direction:ltr}
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.logo img').forEach(function (img) {
+      function useFallback() {
+        if (img.dataset.fallbackDone) return;
+        img.dataset.fallbackDone = '1';
+        var holder = img.closest('.logo');
+        var name = (img.alt || 'شعار البنك').replace(/^شعار\s*/, '');
+        img.remove();
+        holder.classList.add('fallback-logo');
+        var mark = document.createElement('span');
+        mark.className = 'fallback-mark';
+        mark.textContent = 'BANKING';
+        var label = document.createElement('span');
+        label.className = 'fallback-name';
+        label.textContent = name;
+        holder.appendChild(mark);
+        holder.appendChild(label);
+      }
+      img.addEventListener('error', useFallback);
+      if (img.complete && img.naturalWidth === 0) useFallback();
+    });
+  });
+</script>
+
+</body>
+</html>
