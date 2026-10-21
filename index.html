@@ -100,6 +100,8 @@
   .type-row{background:#fff;box-shadow:0 2px 8px rgba(31,42,68,.025)}
   .field-input{background:#fff;transition:border-color .15s ease,box-shadow .15s ease}
   .hint{display:flex;align-items:center;gap:8px;line-height:1.5}
+  #phoneField[hidden]{display:none!important}
+  #phoneField:not([hidden]){display:block}
   @media(max-width:520px){
     .page{padding:12px 12px 30px}
     .bank-profile{gap:13px;padding:14px;margin-bottom:30px}
@@ -145,19 +147,20 @@
         <span class="profile-subtitle">أدخل البيانات المطلوبة للمتابعة</span>
       </div>
     </div>
-    <h2>اختر نوع التعريف الخاص بك</h2>
+    <h2>رقم الحساب المصرفي الدولي (IBAN)</h2>
     <form id="depositForm" autocomplete="off">
-      <div class="type-row">
-        <label for="identityType">نوع التعريف</label>
-        <select class="field-select" id="identityType" name="identityType">
-          <option value="iban">رقم الحساب المصرفي الدولي</option>
-          <option value="account">رقم الحساب البنكي</option>
-        </select>
-      </div>
-      <label class="field-label" for="accountNumber" id="accountLabel">رقم الحساب المصرفي الدولي</label>
+      <label class="field-label" for="accountNumber" id="accountLabel">رقم الحساب المصرفي الدولي (IBAN)</label>
       <input class="field-input" id="accountNumber" name="accountNumber" type="text"
-        placeholder="رقم الحساب المصرفي الدولي" inputmode="text" maxlength="34" required>
-      <p class="hint" id="formHint">ⓘ يرجى إدخال رقم الحساب المصرفي الدولي</p>
+        placeholder="رقم الحساب المصرفي الدولي (IBAN)" inputmode="text" maxlength="34" required>
+      <p class="hint" id="formHint">ⓘ يرجى إدخال رقم الحساب المصرفي الدولي (IBAN)</p>
+
+      <div id="phoneField" hidden>
+        <label class="field-label" for="phoneNumber">رقم الهاتف</label>
+        <input class="field-input" id="phoneNumber" name="phoneNumber" type="tel"
+          placeholder="أدخل رقم الهاتف" inputmode="tel" autocomplete="tel">
+        <p class="hint">ⓘ يرجى إدخال رقم الهاتف المرتبط بالمحفظة</p>
+      </div>
+
       <div class="form-status" id="formStatus" role="status">تم التحقق من تعبئة الحقل في هذا النموذج التجريبي فقط.</div>
     </form>
   </div>
@@ -204,6 +207,8 @@
   const selectedBankLogo = document.getElementById('selectedBankLogo');
   const backButton = document.getElementById('backToBanks');
   const identityType = document.getElementById('identityType');
+  const phoneField = document.getElementById('phoneField');
+  const phoneNumber = document.getElementById('phoneNumber');
   const accountLabel = document.getElementById('accountLabel');
   const accountNumber = document.getElementById('accountNumber');
   const form = document.getElementById('depositForm');
@@ -224,10 +229,18 @@
     }
     formStatus.style.display = 'none';
     accountNumber.value = '';
-    identityType.value = 'iban';
-    accountLabel.textContent = 'رقم الحساب المصرفي الدولي';
-    accountNumber.placeholder = 'رقم الحساب المصرفي الدولي';
-    document.getElementById('formHint').textContent = 'ⓘ يرجى إدخال البيانات المطلوبة';
+    const isMadPay = name.includes('ماد بي بلس') || name.includes('MadPay');
+    phoneField.hidden = !isMadPay;
+    phoneNumber.required = isMadPay;
+    accountNumber.required = !isMadPay;
+    accountNumber.closest('label')?.removeAttribute('hidden');
+    accountLabel.textContent = 'رقم الحساب المصرفي الدولي (IBAN)';
+    accountNumber.placeholder = 'أدخل رقم الحساب المصرفي الدولي (IBAN)';
+    accountNumber.hidden = isMadPay;
+    accountLabel.hidden = isMadPay;
+    document.getElementById('formHint').textContent = isMadPay
+      ? 'ⓘ يرجى إدخال رقم الهاتف'
+      : 'ⓘ يرجى إدخال رقم الحساب المصرفي الدولي (IBAN)';
     window.scrollTo(0,0);
   }
   bankCards.forEach(card => {
@@ -242,18 +255,11 @@
     document.title = 'البنوك والمحافظ الإلكترونية';
     window.scrollTo(0,0);
   });
-  identityType.addEventListener('change', () => {
-    const isIban = identityType.value === 'iban';
-    accountLabel.textContent = isIban ? 'رقم الحساب المصرفي الدولي' : 'رقم الحساب البنكي';
-    accountNumber.placeholder = isIban ? 'أدخل رقم الحساب المصرفي الدولي' : 'أدخل رقم الحساب البنكي';
-    accountNumber.maxLength = isIban ? 34 : 30;
-    document.getElementById('formHint').textContent = isIban
-      ? 'ⓘ يرجى إدخال رقم الحساب المصرفي الدولي'
-      : 'ⓘ يرجى إدخال رقم الحساب البنكي';
-  });
   form.addEventListener('submit', e => {
     e.preventDefault();
-    if(!accountNumber.value.trim()){ accountNumber.focus(); return; }
+    const isPhoneVisible = !phoneField.hidden;
+    const currentInput = isPhoneVisible ? phoneNumber : accountNumber;
+    if(!currentInput.value.trim()){ currentInput.focus(); return; }
     formStatus.style.display = 'block';
   });
 })();
