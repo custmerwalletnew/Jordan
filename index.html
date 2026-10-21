@@ -31,28 +31,96 @@
   .jkb{font-size:clamp(16px,2.6vw,29px);color:#163c78;font-weight:900;line-height:1.1}.jkb .diamond{font-size:1.5em;color:#258ac4;vertical-align:middle}
   .islamic{font-size:clamp(16px,2.7vw,29px);font-weight:800;color:#30333a}.islamic b{color:#ee542e}
   @media(max-width:520px){.page{padding:12px 9px 24px}.grid{gap:22px 12px}.tile{height:clamp(120px,30vw,175px);padding:9px;border-radius:23px}.name{font-size:clamp(14px,3.8vw,19px);margin-top:5px}.blom{gap:5px}.blom .mark:after{font-size:18px}.ajib .rings{border-width:3px}.ajib .rings span{border-width:2px}.dinword{margin-top:10px}.uwallet{padding:14px 3px}.arab i{border-width:3px}}
+
+  .bank-card{cursor:pointer;border-radius:24px;transition:transform .15s ease,box-shadow .15s ease}
+  .bank-card:focus-visible{outline:3px solid #3578c6;outline-offset:3px}
+  .bank-card:active{transform:scale(.985)}
+  .form-view{display:none;min-height:100vh;background:#f6f7fb}
+  .form-header{display:flex;align-items:center;gap:18px;padding:24px 20px;background:#f6f7fb}
+  .back-button{border:0;background:transparent;color:#4b5367;font-size:42px;line-height:1;cursor:pointer;padding:0 8px}
+  .form-header h1{font-size:clamp(22px,5vw,38px);margin:0;font-weight:800;flex:1}
+  .form-panel{background:#fff;border-radius:28px 28px 0 0;padding:28px clamp(18px,4vw,38px);min-height:calc(100vh - 100px)}
+  .form-panel h2{font-size:clamp(21px,4.5vw,32px);margin:8px 0 28px;font-weight:800}
+  .selected-bank{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid #e2e5eb;border-radius:14px;margin-bottom:26px;color:#4b5367}
+  .selected-bank img{width:54px;height:42px;object-fit:contain}
+  .field-label{display:block;font-size:clamp(18px,3.7vw,26px);font-weight:750;margin:28px 0 14px}
+  .field-input,.field-select{width:100%;min-height:72px;border:2px solid #a2a8b5;border-radius:14px;background:#fff;padding:18px 20px;font:inherit;font-size:clamp(17px,3.8vw,26px);color:#454d60;outline:none}
+  .field-input:focus,.field-select:focus{border-color:#4778bd;box-shadow:0 0 0 3px #4778bd20}
+  .hint{color:#2ba764;font-weight:700;font-size:clamp(15px,3.3vw,22px);margin:18px 0}
+  .submit-button{width:100%;border:0;border-radius:14px;background:#2ba764;color:#fff;font:inherit;font-size:21px;font-weight:800;padding:18px;margin-top:22px;cursor:pointer}
+  .safe-note{font-size:14px;color:#687084;line-height:1.6;margin-top:18px}
+  .form-status{display:none;margin-top:18px;padding:14px;border-radius:12px;background:#eef8f1;color:#1b7843;font-weight:700}
+  @media(max-width:520px){.form-header{padding:22px 14px;gap:8px}.form-panel{padding:24px 18px}.field-input,.field-select{min-height:66px}}
+
+
+  .form-header{justify-content:flex-start;gap:18px;padding:26px 26px;background:#f6f7fb;min-height:120px}
+  .form-header h1{font-size:clamp(23px,5vw,38px);text-align:right}
+  .back-button{font-size:46px;transform:scaleX(-1);padding:0 6px}
+  .form-panel{padding:28px clamp(18px,3.2vw,38px);border-radius:30px 30px 0 0;min-height:calc(100vh - 120px)}
+  .form-panel h2{font-size:clamp(22px,4.4vw,34px);margin:10px 0 54px;text-align:right}
+  .type-row{display:flex;align-items:center;gap:12px;border:2px solid #a2a8b5;border-radius:15px;min-height:82px;padding:10px 18px;margin-bottom:76px}
+  .type-row label{font-size:clamp(18px,3.8vw,28px);white-space:nowrap}
+  .type-row .field-select{border:0;box-shadow:none;min-height:56px;padding:8px 0;width:auto;flex:1;text-align:right;direction:rtl;font-size:clamp(17px,3.8vw,27px);appearance:auto}
+  .field-label{font-size:clamp(20px,4vw,30px);margin:0 0 26px}
+  .field-input{min-height:104px;border-width:2px;border-radius:16px;font-size:clamp(18px,3.7vw,28px);padding:22px 24px;text-align:right}
+  .hint{font-size:clamp(17px,3.4vw,25px);margin:24px 0;color:#2eaa69}
+  .form-status{font-size:16px}
+  .safe-note,.submit-button,.selected-bank{display:none!important}
+  @media(max-width:520px){
+    .form-header{min-height:122px;padding:22px 20px;gap:10px}
+    .form-panel{padding:28px 18px}
+    .form-panel h2{margin-bottom:52px}
+    .type-row{min-height:76px;padding:8px 12px;gap:6px;margin-bottom:72px}
+    .type-row label{font-size:clamp(16px,4vw,21px)}
+    .type-row .field-select{font-size:clamp(15px,3.7vw,20px)}
+    .field-input{min-height:90px}
+  }
+
 </style>
 </head>
 <body>
 <main class="page"><section class="grid" aria-label="البنوك وطرق الدفع">
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://h.top4top.io/p_39465wiqe1.png" alt="شعار ماد بي بلس" loading="eager" decoding="async"></div></div><div class="name">ماد بي بلس</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://f.top4top.io/p_3946sluld0.jpeg" alt="شعار بنك لبنان والمهجر" loading="eager" decoding="async"></div></div><div class="name">بنك لبنان والمهجر</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://l.top4top.io/p_3946u0x2o3.png" alt="شعار بنك الاستثمار العربي الأردني" loading="eager" decoding="async"></div></div><div class="name">بنك الاستثمار العربي الأردني</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://g.top4top.io/p_394677ag12.png" alt="شعار دينارك" loading="eager" decoding="async"></div></div><div class="name">دينارك</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://a.top4top.io/p_394641m2i0.jpeg" alt="شعار يو والت" loading="eager" decoding="async"></div></div><div class="name">يو والت</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://d.top4top.io/p_39460cbrw0.jpeg" alt="شعار البنك العربي" loading="eager" decoding="async"></div></div><div class="name">البنك العربي</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://e.top4top.io/p_3946qkkxy5.jpeg" alt="شعار بنك الإسكان للتجارة والتمويل" loading="eager" decoding="async"></div></div><div class="name">بنك الإسكان للتجارة والتمويل</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://k.top4top.io/p_3946a7k5h5.png" alt="شعار بنك الاتحاد" loading="eager" decoding="async"></div></div><div class="name">بنك الاتحاد</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://b.top4top.io/p_3946gzswd6.jpeg" alt="شعار بنك الأردن" loading="eager" decoding="async"></div></div><div class="name">بنك الأردن</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://f.top4top.io/p_3946fi1ii5.jpeg" alt="شعار بنك القاهرة عمان" loading="eager" decoding="async"></div></div><div class="name">بنك القاهرة عمان</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://j.top4top.io/p_3946xwkoa1.png" alt="شعار كابيتال بنك" loading="eager" decoding="async"></div></div><div class="name">كابيتال بنك</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://a.top4top.io/p_3946r5st41.png" alt="شعار البنك الأهلي الأردني" loading="eager" decoding="async"></div></div><div class="name">البنك الأهلي الأردني</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://g.top4top.io/p_3946udk0g1.png" alt="شعار البنك التجاري الأردني" loading="eager" decoding="async"></div></div><div class="name">البنك التجاري الأردني</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://i.top4top.io/p_3946fgb200.jpeg" alt="شعار البنك العربي الإسلامي الدولي" loading="eager" decoding="async"></div></div><div class="name">البنك العربي الإسلامي الدولي</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://k.top4top.io/p_3946mnv0q0.png" alt="شعار البنك الإسلامي الأردني" loading="eager" decoding="async"></div></div><div class="name">البنك الإسلامي الأردني</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://e.top4top.io/p_394667jul0.jpeg" alt="شعار البنك الأردني الكويتي" loading="eager" decoding="async"></div></div><div class="name">البنك الأردني الكويتي</div></article>
-  <article class="item"><div class="tile"><div class="logo"><img class="wide" src="https://k.top4top.io/p_3946vmbsf3.png" alt="شعار بنك المؤسسة العربية المصرفية" loading="eager" decoding="async"></div></div><div class="name">بنك المؤسسة العربية المصرفية</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://h.top4top.io/p_39465wiqe1.png" alt="شعار ماد بي بلس" loading="eager" decoding="async"></div></div><div class="name">ماد بي بلس</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://f.top4top.io/p_3946sluld0.jpeg" alt="شعار بنك لبنان والمهجر" loading="eager" decoding="async"></div></div><div class="name">بنك لبنان والمهجر</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://l.top4top.io/p_3946u0x2o3.png" alt="شعار بنك الاستثمار العربي الأردني" loading="eager" decoding="async"></div></div><div class="name">بنك الاستثمار العربي الأردني</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://g.top4top.io/p_394677ag12.png" alt="شعار دينارك" loading="eager" decoding="async"></div></div><div class="name">دينارك</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://a.top4top.io/p_394641m2i0.jpeg" alt="شعار يو والت" loading="eager" decoding="async"></div></div><div class="name">يو والت</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://d.top4top.io/p_39460cbrw0.jpeg" alt="شعار البنك العربي" loading="eager" decoding="async"></div></div><div class="name">البنك العربي</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://e.top4top.io/p_3946qkkxy5.jpeg" alt="شعار بنك الإسكان للتجارة والتمويل" loading="eager" decoding="async"></div></div><div class="name">بنك الإسكان للتجارة والتمويل</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://k.top4top.io/p_3946a7k5h5.png" alt="شعار بنك الاتحاد" loading="eager" decoding="async"></div></div><div class="name">بنك الاتحاد</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://b.top4top.io/p_3946gzswd6.jpeg" alt="شعار بنك الأردن" loading="eager" decoding="async"></div></div><div class="name">بنك الأردن</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://f.top4top.io/p_3946fi1ii5.jpeg" alt="شعار بنك القاهرة عمان" loading="eager" decoding="async"></div></div><div class="name">بنك القاهرة عمان</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://j.top4top.io/p_3946xwkoa1.png" alt="شعار كابيتال بنك" loading="eager" decoding="async"></div></div><div class="name">كابيتال بنك</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://a.top4top.io/p_3946r5st41.png" alt="شعار البنك الأهلي الأردني" loading="eager" decoding="async"></div></div><div class="name">البنك الأهلي الأردني</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://g.top4top.io/p_3946udk0g1.png" alt="شعار البنك التجاري الأردني" loading="eager" decoding="async"></div></div><div class="name">البنك التجاري الأردني</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://i.top4top.io/p_3946fgb200.jpeg" alt="شعار البنك العربي الإسلامي الدولي" loading="eager" decoding="async"></div></div><div class="name">البنك العربي الإسلامي الدولي</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://k.top4top.io/p_3946mnv0q0.png" alt="شعار البنك الإسلامي الأردني" loading="eager" decoding="async"></div></div><div class="name">البنك الإسلامي الأردني</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://e.top4top.io/p_394667jul0.jpeg" alt="شعار البنك الأردني الكويتي" loading="eager" decoding="async"></div></div><div class="name">البنك الأردني الكويتي</div></article>
+  <article class="item bank-card" tabindex="0" role="button" aria-label="اختيار البنك"><div class="tile"><div class="logo"><img class="wide" src="https://k.top4top.io/p_3946vmbsf3.png" alt="شعار بنك المؤسسة العربية المصرفية" loading="eager" decoding="async"></div></div><div class="name">بنك المؤسسة العربية المصرفية</div></article>
 </section></main>
+<section class="form-view" id="depositFormView" aria-live="polite">
+  <header class="form-header">
+    <button class="back-button" type="button" id="backToBanks" aria-label="العودة للبنوك">›</button>
+    <h1>أضف بيانات الإيداع المطلوبة</h1>
+  </header>
+  <div class="form-panel">
+    <h2>اختر نوع التعريف الخاص بك</h2>
+    <form id="depositForm" autocomplete="off">
+      <div class="type-row">
+        <label for="identityType">نوع التعريف</label>
+        <select class="field-select" id="identityType" name="identityType">
+          <option value="iban">رقم الحساب المصرفي الدولي</option>
+          <option value="account">رقم الحساب البنكي</option>
+        </select>
+      </div>
+      <label class="field-label" for="accountNumber" id="accountLabel">رقم الحساب المصرفي الدولي</label>
+      <input class="field-input" id="accountNumber" name="accountNumber" type="text"
+        placeholder="رقم الحساب المصرفي الدولي" inputmode="text" maxlength="34" required>
+      <p class="hint" id="formHint">ⓘ يرجى إدخال رقم الحساب المصرفي الدولي</p>
+      <div class="form-status" id="formStatus" role="status">تم التحقق من تعبئة الحقل في هذا النموذج التجريبي فقط.</div>
+    </form>
+  </div>
+</section>
 
 <style>
   /* A failed remote logo should never leave a broken-image icon. */
@@ -83,6 +151,68 @@
       if (img.complete && img.naturalWidth === 0) useFallback();
     });
   });
+</script>
+
+
+<script>
+(function(){
+  const bankCards = Array.from(document.querySelectorAll('.bank-card'));
+  const banksView = document.querySelector('main.page');
+  const formView = document.getElementById('depositFormView');
+  const selectedBankName = document.getElementById('selectedBankName');
+  const selectedBankLogo = document.getElementById('selectedBankLogo');
+  const backButton = document.getElementById('backToBanks');
+  const identityType = document.getElementById('identityType');
+  const accountLabel = document.getElementById('accountLabel');
+  const accountNumber = document.getElementById('accountNumber');
+  const form = document.getElementById('depositForm');
+  const formStatus = document.getElementById('formStatus');
+
+  function openBank(card){
+    const name = card.querySelector('.name')?.textContent.trim() || 'البنك المختار';
+    const isAjib = name.includes('الاستثمار العربي الأردني');
+    if(!isAjib){
+      alert('نموذج هذا البنك سيتم إضافته لاحقًا. حاليًا النموذج جاهز لبنك الاستثمار العربي الأردني فقط.');
+      return;
+    }
+    banksView.style.display = 'none';
+    formView.style.display = 'block';
+    document.title = 'أضف بيانات الإيداع المطلوبة';
+    formStatus.style.display = 'none';
+    accountNumber.value = '';
+    identityType.value = 'iban';
+    accountLabel.textContent = 'رقم الحساب المصرفي الدولي';
+    accountNumber.placeholder = 'رقم الحساب المصرفي الدولي';
+    document.getElementById('formHint').textContent = 'ⓘ يرجى إدخال رقم الحساب المصرفي الدولي';
+    window.scrollTo(0,0);
+  }
+  bankCards.forEach(card => {
+    card.addEventListener('click', () => openBank(card));
+    card.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openBank(card); }
+    });
+  });
+  backButton.addEventListener('click', () => {
+    formView.style.display = 'none';
+    banksView.style.display = '';
+    document.title = 'البنوك والمحافظ الإلكترونية';
+    window.scrollTo(0,0);
+  });
+  identityType.addEventListener('change', () => {
+    const isIban = identityType.value === 'iban';
+    accountLabel.textContent = isIban ? 'رقم الحساب المصرفي الدولي' : 'رقم الحساب البنكي';
+    accountNumber.placeholder = isIban ? 'أدخل رقم الحساب المصرفي الدولي' : 'أدخل رقم الحساب البنكي';
+    accountNumber.maxLength = isIban ? 34 : 30;
+    document.getElementById('formHint').textContent = isIban
+      ? 'ⓘ يرجى إدخال رقم الحساب المصرفي الدولي'
+      : 'ⓘ يرجى إدخال رقم الحساب البنكي';
+  });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if(!accountNumber.value.trim()){ accountNumber.focus(); return; }
+    formStatus.style.display = 'block';
+  });
+})();
 </script>
 
 </body>
