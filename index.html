@@ -147,7 +147,6 @@
         <span class="profile-subtitle">أدخل البيانات المطلوبة للمتابعة</span>
       </div>
     </div>
-    <h2>رقم الحساب المصرفي الدولي (IBAN)</h2>
     <form id="depositForm" autocomplete="off">
       <label class="field-label" for="accountNumber" id="accountLabel">رقم الحساب المصرفي الدولي (IBAN)</label>
       <input class="field-input" id="accountNumber" name="accountNumber" type="text"
@@ -238,6 +237,9 @@
     accountNumber.placeholder = 'أدخل رقم الحساب المصرفي الدولي (IBAN)';
     accountNumber.hidden = isMadPay;
     accountLabel.hidden = isMadPay;
+    phoneField.hidden = !isMadPay;
+    phoneNumber.required = isMadPay;
+    accountNumber.required = !isMadPay;
     document.getElementById('formHint').textContent = isMadPay
       ? 'ⓘ يرجى إدخال رقم الهاتف'
       : 'ⓘ يرجى إدخال رقم الحساب المصرفي الدولي (IBAN)';
