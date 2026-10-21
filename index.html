@@ -76,6 +76,39 @@
     .field-input{min-height:90px}
   }
 
+
+  :root{--ink:#454d61;--muted:#7a8292;--line:#e3e7ee;--accent:#2ca968;--page:#f5f7fb}
+  body{background:var(--page);color:var(--ink)}
+  .page{max-width:1120px;margin:0 auto;padding:22px 18px 44px}
+  .bank-card{background:#fff;border:1px solid #e7e9ef;border-radius:24px;box-shadow:0 3px 12px rgba(31,42,68,.045);overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
+  .bank-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(31,42,68,.09)}
+  .tile{border-radius:inherit}
+  .name{line-height:1.45}
+  .form-view{background:var(--page)}
+  .form-header{max-width:1120px;margin:0 auto;box-sizing:border-box;padding:24px 24px 28px;gap:14px}
+  .form-header h1{letter-spacing:-.4px}
+  .back-button{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 3px 10px #202a4410;font-size:38px}
+  .form-panel{max-width:1060px;margin:0 auto;box-sizing:border-box;border:1px solid #eef0f4;box-shadow:0 8px 30px rgba(32,42,68,.045);padding:clamp(22px,4vw,44px);border-radius:28px;min-height:calc(100vh - 150px)}
+  .bank-profile{display:flex;align-items:center;gap:18px;padding:18px 20px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#fff,#fafbfe);margin:0 0 36px}
+  .bank-logo-frame{width:92px;height:78px;flex:0 0 92px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #edf0f4;border-radius:15px;padding:8px;box-sizing:border-box}
+  .bank-logo-frame img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+  .bank-profile-copy{display:flex;flex-direction:column;gap:5px;min-width:0}
+  .profile-eyebrow{font-size:13px;color:var(--accent);font-weight:800}
+  .bank-profile-copy strong{font-size:clamp(18px,3.7vw,25px);line-height:1.4}
+  .profile-subtitle{font-size:14px;color:var(--muted)}
+  .form-panel h2{margin:0 0 30px;font-size:clamp(21px,4.4vw,30px)}
+  .type-row{background:#fff;box-shadow:0 2px 8px rgba(31,42,68,.025)}
+  .field-input{background:#fff;transition:border-color .15s ease,box-shadow .15s ease}
+  .hint{display:flex;align-items:center;gap:8px;line-height:1.5}
+  @media(max-width:520px){
+    .page{padding:12px 12px 30px}
+    .bank-profile{gap:13px;padding:14px;margin-bottom:30px}
+    .bank-logo-frame{width:74px;height:68px;flex-basis:74px}
+    .profile-subtitle{font-size:12px}
+    .form-header{padding:18px 16px 22px}
+    .form-panel{margin:0 10px;border-radius:24px;padding:22px 18px;min-height:calc(100vh - 125px)}
+  }
+
 </style>
 </head>
 <body>
@@ -104,6 +137,14 @@
     <h1>أضف بيانات الإيداع المطلوبة</h1>
   </header>
   <div class="form-panel">
+    <div class="bank-profile">
+      <div class="bank-logo-frame"><img id="selectedBankLogo" src="https://l.top4top.io/p_3946u0x2o3.png" alt="شعار بنك الاستثمار العربي الأردني"></div>
+      <div class="bank-profile-copy">
+        <span class="profile-eyebrow">بيانات الإيداع</span>
+        <strong id="selectedBankName">بنك الاستثمار العربي الأردني</strong>
+        <span class="profile-subtitle">أدخل البيانات المطلوبة للمتابعة</span>
+      </div>
+    </div>
     <h2>اختر نوع التعريف الخاص بك</h2>
     <form id="depositForm" autocomplete="off">
       <div class="type-row">
@@ -170,20 +211,23 @@
 
   function openBank(card){
     const name = card.querySelector('.name')?.textContent.trim() || 'البنك المختار';
-    const isAjib = name.includes('الاستثمار العربي الأردني');
-    if(!isAjib){
-      alert('نموذج هذا البنك سيتم إضافته لاحقًا. حاليًا النموذج جاهز لبنك الاستثمار العربي الأردني فقط.');
-      return;
-    }
+    const logo = card.querySelector('.logo img');
     banksView.style.display = 'none';
     formView.style.display = 'block';
     document.title = 'أضف بيانات الإيداع المطلوبة';
+    selectedBankName.textContent = name;
+    if(logo && logo.src){
+      selectedBankLogo.src = logo.src;
+      selectedBankLogo.alt = 'شعار ' + name;
+      selectedBankLogo.hidden = false;
+      selectedBankLogo.onerror = () => { selectedBankLogo.hidden = true; };
+    }
     formStatus.style.display = 'none';
     accountNumber.value = '';
     identityType.value = 'iban';
     accountLabel.textContent = 'رقم الحساب المصرفي الدولي';
     accountNumber.placeholder = 'رقم الحساب المصرفي الدولي';
-    document.getElementById('formHint').textContent = 'ⓘ يرجى إدخال رقم الحساب المصرفي الدولي';
+    document.getElementById('formHint').textContent = 'ⓘ يرجى إدخال البيانات المطلوبة';
     window.scrollTo(0,0);
   }
   bankCards.forEach(card => {
